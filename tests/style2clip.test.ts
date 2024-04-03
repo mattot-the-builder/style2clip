@@ -1,5 +1,5 @@
-import { multiply } from "../src/index";
+import { foo } from "../src/style2clip";
 
-test("2 times 3 is 6", () => {
-	expect(multiply(2,3)).toBe(6);
-});
+test("foo", () => {
+	expect(foo()).toBe("foo");
+})
