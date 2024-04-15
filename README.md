@@ -27,7 +27,7 @@ Alternatively, if you are not using npm you can download the final compiled file
 import { Style2Clip } from 'style2clip';
 let style2clip = Style2Clip.getInstance();
 ```
-2. Set the class name for the copy button
+2. Set the your class name for the copy button
 ```typescript
-style2clip.setButtonClassName(".button-copy");
+style2clip.setButtonClassName(".your-button-class-name");
 ```
