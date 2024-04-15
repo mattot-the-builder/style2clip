@@ -7,7 +7,9 @@ Small and lighweight library to copy html & css block into image format.
 ### npm
 
 To install the package using npm, run the following command
-`npm install style2clip`
+```
+npm install style2clip
+```
 
 ### Direct Download
 
