@@ -5,10 +5,12 @@ Small and lighweight library to copy html & css block into image format.
 ## Installation
 
 ### npm
+
 To install the package using npm, run the following command
 `npm install style2clip`
 
 ### Direct Download
+
 Alternatively, if you are not using npm you can download the final compiled file directly
 
 1. Go to the release page on github
@@ -19,10 +21,11 @@ Alternatively, if you are not using npm you can download the final compiled file
 ## Usage
 
 1. Import `Style2Clip` and make an instance
-```
-js
+```typescript
 import { Style2Clip } from 'style2clip';
 let style2clip = Style2Clip.getInstance();
 ```
 2. Set the class name for the copy button
-`style2clip.setButtonClassName(".button-copy");`
+```typescript
+style2clip.setButtonClassName(".button-copy");
+```
