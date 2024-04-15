@@ -1,6 +1,6 @@
 import html2canvas from 'html2canvas';
 
-class Style2Clip {
+export class Style2Clip {
 
 	/**
 	 * Convert html and css block into image and put it into clipboard
@@ -11,6 +11,7 @@ class Style2Clip {
 
 	constructor(buttonClassName: string = ".button-copy") {
 		Style2Clip._buttonClassName = buttonClassName;
+		this.setButtonClassName(buttonClassName);
 	}
 
 	handleClick(event: MouseEvent) {
@@ -18,7 +19,7 @@ class Style2Clip {
 	}
 
 	/**
-	 * Set button class name
+	 * Set button class namethis
 	 * @param {string} buttonClassName
 	 */
 
@@ -35,7 +36,7 @@ class Style2Clip {
 
 		copyButtons.forEach((button) => {
 			button.addEventListener("click", ((event: MouseEvent) => {
-				style2clip.handleClick.bind(style2clip)(event);
+				this.handleClick.bind(this)(event);
 			}) as EventListener);
 		});
 	}
@@ -86,6 +87,3 @@ class Style2Clip {
 		this.convertToImage(callingParent as HTMLElement);
 	}
 }
-
-const style2clip = new Style2Clip();
-style2clip.setButtonClassName(".button-copy");

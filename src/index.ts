@@ -1,1 +1,1 @@
-export * from "./style2clip";
+export * from './style2clip';
