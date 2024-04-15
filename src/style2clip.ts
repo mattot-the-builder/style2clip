@@ -7,11 +7,19 @@ export class Style2Clip {
 	 * @param {string} buttonClassName
 	 */
 
-	private static _buttonClassName: string = ".button-copy";
+	private static instance: Style2Clip;
+	private buttonClassName: string = "";
+	private copyButtons: HTMLElement[] = [];
 
-	constructor(buttonClassName: string = ".button-copy") {
-		Style2Clip._buttonClassName = buttonClassName;
-		this.setButtonClassName(buttonClassName);
+
+	private constructor() {
+	}
+
+	public static getInstance() {
+		if (!Style2Clip.instance) {
+			Style2Clip.instance = new Style2Clip();
+		}
+		return Style2Clip.instance;
 	}
 
 	handleClick(event: MouseEvent) {
@@ -25,16 +33,13 @@ export class Style2Clip {
 
 	setButtonClassName(buttonClassName: string) {
 
-		const copyButtons = document.querySelectorAll(Style2Clip._buttonClassName);
+		// const copyButtons = document.querySelectorAll(Style2Clip._buttonClassName);
 
-		Style2Clip._buttonClassName = buttonClassName;
+		this.buttonClassName = buttonClassName;
 
-		/**
-		 * Add event listener to all copy buttons
-		 * @param {MouseEvent} event
-		 */
+		this.copyButtons = document.querySelectorAll(this.buttonClassName) as unknown as HTMLElement[];
 
-		copyButtons.forEach((button) => {
+		this.copyButtons.forEach((button) => {
 			button.addEventListener("click", ((event: MouseEvent) => {
 				this.handleClick.bind(this)(event);
 			}) as EventListener);
@@ -46,7 +51,7 @@ export class Style2Clip {
 	 */
 
 	getButtonClassName() {
-		return Style2Clip._buttonClassName;
+		return this.buttonClassName;
 	}
 
 	/**
